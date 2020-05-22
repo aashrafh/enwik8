@@ -2,6 +2,10 @@
 
 
 
+Node::Node()
+{
+}
+
 Node::Node(const char symbol, const unsigned long long freq)
 {
 	this->symbol = symbol;
@@ -11,7 +15,7 @@ Node::Node(const char symbol, const unsigned long long freq)
 
 }
 
-char & Node::getSymbol()
+char Node::getSymbol()
 {
 	return this->symbol;
 }
@@ -32,7 +36,7 @@ void Node::setNodes(Node * left, Node * right)
 	this->right = right;
 }
 
-unsigned long long & Node::getFreq()
+unsigned long long Node::getFreq()
 {
 	return this->frequency;
 }
@@ -46,4 +50,9 @@ Node::~Node()
 {
 	if (this->left != nullptr) delete this->left;
 	if (this->right != nullptr) delete this->right;
+}
+
+bool Node::operator<(const Node & node)
+{
+	return this->frequency > node.frequency;
 }
