@@ -48,8 +48,8 @@ void Node::setFreq(const unsigned long long freq)
 
 Node::~Node()
 {
-	if (this->left != nullptr) delete this->left;
-	if (this->right != nullptr) delete this->right;
+	/*if (this->left != nullptr) delete this->left;
+	if (this->right != nullptr) delete this->right;*/
 }
 
 bool Node::operator<(const Node & node)

@@ -26,7 +26,7 @@ void Huffman::compress(const std::map<char, unsigned long long> freq)
 		*n2 = nodes.top();
 		nodes.pop();
 
-		Node node(0, (*n1).getFreq() + (*n2).getFreq());
+		Node node('\0', (*n1).getFreq() + (*n2).getFreq());
 		node.setNodes(n1, n2);
 		nodes.push(node);
 	}
@@ -43,13 +43,12 @@ void Huffman::decompress(const std::map<char, std::string> codes, std::string en
 
 	for (auto code : codes) decodedCodes[code.second] = code.first;
 
-	char decodedSymbol = 0;
 	std::string code = "";
 	for (unsigned int i = 0; i < (unsigned int)encoded.size(); i++) {
 		code += encoded[i];
 		if (decodedCodes.count(code) > 0) {
-			/*if (decodedCodes[code] == 6) break;*/
-			decodedSymbol += decodedCodes[code];
+			if (decodedCodes[code] == '\0') break;
+			this->decoded += decodedCodes[code];
 			code = "";
 		}
 	}
@@ -76,7 +75,7 @@ void Huffman::constructCodes(Node * node, std::string code)
 
 	if (node->getRightNode() != nullptr) constructCodes(node->getRightNode(), code + "0");
 
-	if (node->getSymbol() != 0) this->codes[node->getSymbol()] = code;
+	if (node->getSymbol() != '\0') this->codes[node->getSymbol()] = code;
 
 	return;
 }
