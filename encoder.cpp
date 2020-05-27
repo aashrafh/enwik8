@@ -49,9 +49,6 @@ void encode(std::ifstream &enwik8, std::ofstream &enwik8Enco)
 
     char symbol;
     ll n, numberOfBits = 8, lastCode = 256;
-    //can be replaced with 8 !!
-    // while ((1 << (numberOfBits - 1)) < dct.size())
-    //     numberOfBits++;
     std::string match = "";
 
     enwik8Enco.put(0xff);
