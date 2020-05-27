@@ -110,4 +110,13 @@ int main()
     encode(enwik8, enwik8Enco);
     std::chrono::high_resolution_clock::time_point ed = std::chrono::high_resolution_clock::now();
     std::cout << "Encoding time in seconds: " << std::chrono::duration_cast<std::chrono::duration<double>>(ed - st).count() << "\n";
+
+    std::ifstream bitsBeforeCompression("enwik8", std::ifstream::ate | std::ifstream::binary);
+    int sizeBefore = bitsBeforeCompression.tellg();
+    std::ifstream bitsAfterCompression("enwik8Enco", std::ifstream::ate | std::ifstream::binary);
+    int sizeAfter = bitsAfterCompression.tellg();
+    bitsBeforeCompression.close();
+    bitsAfterCompression.close();
+    double compressionRatio = 1.0 * sizeBefore / sizeAfter;
+    std::cout << "Compression Ratio: " << compressionRatio << "\n";
 }
