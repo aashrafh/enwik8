@@ -17,6 +17,7 @@ An attemt trying ot compress the first 100 MB of Wikipedia which is called [enwi
   1. Open a terminal on the directory containing the code
   2. Generate the binary file using command: ```g++ -o decoder.exe decoder.cpp```
   3. Run the binary file: ```./decoder.exe```
-  # To Do
-  - [ ] A Decoder for the BZip2-Like algorithm
- 
+
+# To Do
+- [ ] A Decoder for the BZip2-Like algorithm
+
