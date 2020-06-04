@@ -1,5 +1,5 @@
 # About
-An attempt to compress the first 100 MB of Wikipedia which is called [enwik8](https://en.wikipedia.org/wiki/Hutter_Prize) using LZW((Lempel–Ziv–Welch) and BZip2-Like algorithms with variable length encoding.
+An attempt to compress the first 100 MB of Wikipedia which is called [enwik8](https://en.wikipedia.org/wiki/Hutter_Prize) using LZW(Lempel–Ziv–Welch) and BZip2-Like algorithms with variable length encoding.
 
 # Results
 * <strong>LZW</strong>:
